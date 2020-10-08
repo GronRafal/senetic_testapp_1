@@ -1,0 +1,560 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel OpenApi Demo Documentation",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "APP_URL",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "api/customers": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Get list of customers",
+                "description": "Returns list of customers",
+                "operationId": "getAllCustomers",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Costumer id",
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "description": "Costumer name",
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "description": "Costumer create at date",
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "description": "Costumer update at date",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": [
+                                        {
+                                            "id": 1,
+                                            "name": "Alfred",
+                                            "created_at": "2020-10-07T13:44:01.000000Z",
+                                            "updated_at": "2020-10-07T14:21:00.000000Z"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "name": "Jon Snow",
+                                            "created_at": "2020-10-07T14:00:58.000000Z",
+                                            "updated_at": "2020-10-07T14:01:12.000000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "api/customer": {
+            "post": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Create new customer",
+                "description": "Create new customer in database",
+                "operationId": "createCustomer",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "multi"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Customer record created"
+                    },
+                    "404": {
+                        "description": "name is required"
+                    }
+                }
+            }
+        },
+        "api/customer/{id}": {
+            "get": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Customer details",
+                "description": "Get customer details",
+                "operationId": "getCustomer",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Customer details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Costumer id",
+                                            "type": "integer"
+                                        },
+                                        "name": {
+                                            "description": "Costumer name",
+                                            "type": "string"
+                                        },
+                                        "created_at": {
+                                            "description": "Costumer create at date",
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "description": "Costumer update at date",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "id": 2,
+                                        "name": "Jon Snow",
+                                        "created_at": "2020-10-07T14:00:58.000000Z",
+                                        "updated_at": "2020-10-07T14:01:12.000000Z"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Customer not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Update customer",
+                "description": "Update customer data",
+                "operationId": "updateCustomer",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "multi"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Customer records updated successfully"
+                    },
+                    "403": {
+                        "description": "name is required"
+                    },
+                    "404": {
+                        "description": "Customer not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Customer"
+                ],
+                "summary": "Delete customer",
+                "description": "Remove customers from database",
+                "operationId": "deleteCustomer",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Customer record deleted"
+                    },
+                    "404": {
+                        "description": "Customer not found"
+                    }
+                }
+            }
+        },
+        "api/customer/{id}/addresses": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Get list of addresses",
+                "description": "Returns list of addresses for current customer",
+                "operationId": "getAllAddresses",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Address id",
+                                            "type": "integer"
+                                        },
+                                        "street": {
+                                            "description": "Street name",
+                                            "type": "string"
+                                        },
+                                        "city": {
+                                            "description": "City name",
+                                            "type": "string"
+                                        },
+                                        "customer_id": {
+                                            "description": "Customer id",
+                                            "type": "integer"
+                                        },
+                                        "created_at": {
+                                            "description": "Address create at date",
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "description": "Address update at date",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": [
+                                        {
+                                            "id": 1,
+                                            "street": "Wiejska 13",
+                                            "city": "Warsaw",
+                                            "customer_id": "1",
+                                            "created_at": "2020-10-07T14:44:01.000000Z",
+                                            "updated_at": "2020-10-07T15:21:00.000000Z"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "street": "Nowowiejska 8b",
+                                            "city": "Warsaw",
+                                            "customer_id": "1",
+                                            "created_at": "2020-10-07T15:00:58.000000Z",
+                                            "updated_at": "2020-10-07T16:01:12.000000Z"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Customer not found"
+                    }
+                }
+            }
+        },
+        "api/customer/{id}/address": {
+            "post": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Create address",
+                "description": "Create new address for current customer",
+                "operationId": "createAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "street"
+                                ],
+                                "properties": {
+                                    "city": {
+                                        "type": "string",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "multi"
+                                    },
+                                    "street": {
+                                        "type": "string",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "multi"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Address record created"
+                    },
+                    "403": {
+                        "description": "street and city are required"
+                    },
+                    "404": {
+                        "description": "Customer not found"
+                    }
+                }
+            }
+        },
+        "api/address/{id}": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Get one address",
+                "description": "Return address by id",
+                "operationId": "getAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "description": "Address id",
+                                            "type": "integer"
+                                        },
+                                        "street": {
+                                            "description": "Street name",
+                                            "type": "string"
+                                        },
+                                        "city": {
+                                            "description": "City name",
+                                            "type": "string"
+                                        },
+                                        "customer_id": {
+                                            "description": "Customer id",
+                                            "type": "integer"
+                                        },
+                                        "created_at": {
+                                            "description": "Address create at date",
+                                            "type": "string"
+                                        },
+                                        "updated_at": {
+                                            "description": "Address update at date",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object",
+                                    "example": {
+                                        "id": 1,
+                                        "street": "Wiejska 13",
+                                        "city": "Warsaw",
+                                        "customer_id": "1",
+                                        "created_at": "2020-10-07T14:44:01.000000Z",
+                                        "updated_at": "2020-10-07T15:21:00.000000Z"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Address not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Update address",
+                "description": "Update address data",
+                "operationId": "updateAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "street",
+                                    "city"
+                                ],
+                                "properties": {
+                                    "street": {
+                                        "type": "string",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "multi"
+                                    },
+                                    "city": {
+                                        "type": "string",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "multi"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Address records updated successfully"
+                    },
+                    "403": {
+                        "description": "street and city are required"
+                    },
+                    "404": {
+                        "description": "Address not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Delete address",
+                "description": "Remove address from database",
+                "operationId": "deleteAddress",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "id is required",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Address record deleted"
+                    },
+                    "404": {
+                        "description": "Address not found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Projects",
+            "description": "API Endpoints of Projects"
+        }
+    ],
+    "security": [
+        []
+    ]
+}

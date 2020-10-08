@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  webapp:
+    image: webdevops/php-nginx:7.4
+    ports:
+      - 8082:80
+    volumes:
+      - ./:/app/:rw,cached
+      - ./var/log/:/app/var/log/:delegated
+      - ./vendor/:/app/vendor/:delegated
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+      COMPOSER_MEMORY_LIMIT: -1
+      WEB_DOCUMENT_ROOT: /app/public
+    working_dir: /app/
