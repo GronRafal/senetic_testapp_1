@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81d45dbe-738f-4b63-aafc-baae7e791312" name="Default Changelist" comment="main commint">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/site.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql/my.cnf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/conf.d/app.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,6 +206,7 @@
       <workItem from="1602148272790" duration="1668000" />
       <workItem from="1602175876707" duration="671000" />
       <workItem from="1602253760993" duration="886000" />
+      <workItem from="1602256406876" duration="3636000" />
     </task>
     <task id="LOCAL-00001" summary="main commint">
       <created>1602147586402</created>
@@ -249,9 +251,17 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="590" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1602147588273" />
+    <state x="686" y="292" width="618" height="522" key="find.popup" timestamp="1602257900761">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="686" y="292" width="618" height="522" key="find.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1602257900761" />
     <state x="658" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1602072619194">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="658" y="259" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1602072619194" />
+    <state x="720" y="456" width="540" height="201" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1602257393959">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="720" y="456" width="540" height="201" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1602257393959" />
   </component>
 </project>
