@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Models\Address;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Database\Seeders\DatabaseSeeder;
 
 /**
  * @OA\Info(
@@ -90,6 +92,47 @@ class ApiController extends Controller
     public function getAllCustomers() {
         $customers = Customer::get()->toJson(JSON_PRETTY_PRINT);
         return response($customers, 200);
+    }
+
+    public function getTest() {
+//        dd(Request::ip())
+//        $seeder = new DatabaseSeeder();
+//
+//        $seeder->run();
+
+//        dd('asdasd');
+// Test database connection
+        try {
+            DB::connection()->getPdo();
+        } catch (\Exception $e) {
+            dd("Could not connect to the database.  Please check your configuration. error:" . $e );
+        }
+//        env("APP_NAME", "somedefaultvalue");
+//        dd(env("DB_USERNAME", "somedefaultvalue"));
+//        try {
+//            DB::connection()->getPdo();
+//            if(DB::connection()->getDatabaseName()){
+//                echo "Yes! Successfully connected to the DB: " . DB::connection()->getDatabaseName();
+//            }else{
+//                die("Could not find the database. Please check your configuration.");
+//            }
+//        } catch (\Exception $e) {
+//            die("Could not open connection to database server.  Please check your configuration.".$e);
+//        }
+//        $servername = "127.0.0.1";
+//        $username = "laraveluser";
+//        $password = "laravel_db_password";
+//
+//        try {
+//            $conn = new PDO("mysql:host=$servername;port=3307;dbname=laravel", $username, $password);
+//            // set the PDO error mode to exception
+//            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//            dd( "Connected successfully");
+//        }
+//        catch(PDOException $e)
+//        {
+//            dd( "Connection failed: " . $e->getMessage());
+//        }
     }
 
     /**

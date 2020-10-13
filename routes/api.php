@@ -16,6 +16,7 @@ use App\Http\Controllers\ApiController;
 */
 Route::middleware(['basicAuth'])->group(function () {
     Route::get('customers', [ApiController::class, 'getAllCustomers']);
+    Route::get('test', [ApiController::class, 'getTest']);
     Route::get('customer/{id}', [ApiController::class, 'getCustomer']);
     Route::post('customer', [ApiController::class, 'createCustomer']);
     Route::put('customer/{id}', [ApiController::class, 'updateCustomer']);

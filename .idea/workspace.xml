@@ -19,12 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81d45dbe-738f-4b63-aafc-baae7e791312" name="Default Changelist" comment="main commint">
-      <change afterPath="$PROJECT_DIR$/mysql/my.cnf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/conf.d/app.conf" afterDir="false" />
+    <list default="true" id="81d45dbe-738f-4b63-aafc-baae7e791312" name="Default Changelist" comment="docker update">
+      <change afterPath="$PROJECT_DIR$/DockerfileOld" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/Address.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-new.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-old.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql/init.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +195,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -206,7 +223,12 @@
       <workItem from="1602148272790" duration="1668000" />
       <workItem from="1602175876707" duration="671000" />
       <workItem from="1602253760993" duration="886000" />
-      <workItem from="1602256406876" duration="3636000" />
+      <workItem from="1602256406876" duration="4257000" />
+      <workItem from="1602495089227" duration="599000" />
+      <workItem from="1602497033829" duration="599000" />
+      <workItem from="1602500141802" duration="600000" />
+      <workItem from="1602587121242" duration="15437000" />
+      <workItem from="1602602796549" duration="8097000" />
     </task>
     <task id="LOCAL-00001" summary="main commint">
       <created>1602147586402</created>
@@ -215,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602147586402</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="docker update">
+      <created>1602260062801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602260062801</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,25 +265,30 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="main commint" />
-    <option name="LAST_COMMIT_MESSAGE" value="main commint" />
+    <MESSAGE value="docker update" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="728" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602077306550">
+    <state x="672" y="359" width="626" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602599773958">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="728" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1602077306550" />
+    <state x="672" y="359" width="626" height="403" key="#com.intellij.fileTypes.FileTypeChooser/70.27.1850.1053@70.27.1850.1053" timestamp="1602599773958" />
+    <state x="728" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602605924460">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="728" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1602605924460" />
     <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1602147771193">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1602147771193" />
-    <state x="590" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1602147588273">
+    <state x="590" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2" timestamp="1602260064386">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="590" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1602147588273" />
-    <state x="686" y="292" width="618" height="522" key="find.popup" timestamp="1602257900761">
+    <state x="590" y="275" width="800" height="563" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1602260064386" />
+    <state x="686" y="292" width="618" height="522" key="find.popup" timestamp="1602608675013">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="686" y="292" width="618" height="522" key="find.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1602257900761" />
+    <state x="686" y="292" width="618" height="522" key="find.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1602608675013" />
     <state x="658" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1602072619194">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>

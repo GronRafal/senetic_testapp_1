@@ -14,11 +14,11 @@ services:
       SERVICE_NAME: app
       SERVICE_TAGS: dev
     working_dir: /var/www
+    networks:
+      - app-network
     volumes:
       - ./:/var/www
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
-    networks:
-      - app-network
     depends_on:
       - db
 
@@ -44,7 +44,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "3308:3306"
     environment:
       MYSQL_ROOT_PASSWORD: master_mysql_root_password
       MYSQL_USER: laraveluser
@@ -53,18 +53,12 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - /var/lib/mysql/
+      - ./var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
-      - ./init.sql:/mysql/init.sql
     networks:
       - app-network
-    command: --init-file /mysql/init.sql
 
 #Docker Networks
 networks:
   app-network:
     driver: bridge
-#Volumes
-volumes:
-  dbdata:
-    driver: local
