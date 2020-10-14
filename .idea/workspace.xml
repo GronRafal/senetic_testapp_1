@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="81d45dbe-738f-4b63-aafc-baae7e791312" name="Default Changelist" comment="docker update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
@@ -186,10 +185,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -220,6 +219,7 @@
       <workItem from="1602587121242" duration="15437000" />
       <workItem from="1602602796549" duration="8601000" />
       <workItem from="1602664445172" duration="907000" />
+      <workItem from="1602670372952" duration="1540000" />
     </task>
     <task id="LOCAL-00001" summary="main commint">
       <created>1602147586402</created>

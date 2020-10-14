@@ -4,6 +4,8 @@
 
 > sudo docker-compose build app
 
+copy env.example to .env
+
 > sudo docker-compose up -d
 
 > sudo docker-compose exec db bash
@@ -22,8 +24,10 @@
 
 ### exit from docker
 
-copy env.example to .env
-
+update DB_PORT=3306 in .env to DB_PORT=3307
+run from local
 > env DB_HOST=127.0.0.1 php artisan migrate:refresh --seed
+
+update DB_PORT=3307 in .env to DB_PORT=3306
 
 [http://localhost:9001/api/docs](http://localhost:9001/api/docs)
