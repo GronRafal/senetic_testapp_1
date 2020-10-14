@@ -38,7 +38,7 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 # Copy existing application directory contents
 COPY . /var/www
 
-COPY /.env.example .env
+COPY .env.example .env
 
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
